@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Permissões da janela principal do QuestLogg",
+  "windows": ["main"],
+  "permissions": ["core:default", "core:window:allow-set-size", "core:window:allow-center", "core:window:allow-set-fullscreen", "core:window:allow-is-fullscreen", "notification:default", "opener:allow-open-url"]
+}
