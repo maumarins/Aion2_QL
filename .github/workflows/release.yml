@@ -1,0 +1,43 @@
+name: Gerar instalador do QuestLogg
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Versão do aplicativo"
+        required: true
+        default: "v0.1.0"
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar instalador
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ inputs.version }}
+          releaseName: "QuestLogg ${{ inputs.version }}"
+          releaseBody: "Aplicativo desktop QuestLogg para AION 2."
+          releaseDraft: false
+          prerelease: false
