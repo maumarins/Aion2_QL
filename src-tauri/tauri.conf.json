@@ -1,14 +1,13 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "QuestLogg — AION 2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "identifier": "com.mauriciomarins.questlogg",
   "build": { "beforeDevCommand": "npm run dev", "devUrl": "http://localhost:1420", "beforeBuildCommand": "npm run build", "frontendDist": "../dist" },
   "app": {
     "windows": [{ "label": "main", "title": "QuestLogg — AION 2", "width": 1280, "height": 850, "minWidth": 560, "minHeight": 620, "resizable": true, "fullscreen": false, "center": true }],
     "security": { "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: https: data:; frame-src https://questlog.gg; connect-src ipc: http://ipc.localhost https://questlog.gg" }
   },
-  "bundle": { "active": true, "targets": ["nsis"],
-"icon": ["icons/icon.ico", "icons/icon.png"], "createUpdaterArtifacts": false, "windows": { "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true } } },
+  "bundle": { "active": true, "targets": ["nsis"], "icon": ["icons/icon.ico", "icons/icon.png"], "createUpdaterArtifacts": false, "windows": { "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true } } },
   "plugins": { "updater": { "active": false } }
 }

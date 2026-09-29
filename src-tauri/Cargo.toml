@@ -1,6 +1,6 @@
 [package]
 name = "questlogg-aion2"
-version = "0.1.0"
+version = "0.2.0"
 description = "Painel desktop de rotina e exploração do AION 2"
 authors = ["Mauricio"]
 edition = "2021"
